@@ -1,0 +1,29 @@
+server:
+   port: 9001
+
+spring:
+   application:
+      name: baitu-producer-order
+   jackson:
+      time-zone: GMT+8
+      serialization:
+         fail-on-empty-beans: false
+      date-format: yyyy-MM-dd HH:mm:ss
+      
+#服务描述
+info:
+   project:
+      name: project-producer-order
+      version: 1.0.0
+
+eureka:
+   instance:
+      hostname: 127.0.0.4
+      #注册ip
+      preferIpAddress: true
+   client:
+      serviceUrl:
+         defaultZone: http://127.0.0.1:10001/eureka/,http://127.0.0.1:10002/eureka/
+
+
+      
