@@ -11,8 +11,11 @@
 		<module>baitu-eureka-peer1</module>
 		<module>baitu-eureka-peer2</module>
 		<module>baitu-producer-user</module>
-		<module>baitu-producer-order</module>
-		<module>baitu-consumer-record</module>
+		<module>baitu-consumer-feign</module>
+		<module>baitu-consumer-ribbon</module>
+		<module>baitu-order-pay</module>
+		<module>baitu-producer-order2</module>
+		<module>baitu-service-api</module>
 	</modules>
 	
 	<parent>
@@ -65,6 +68,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<!-- AOP 支持 -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
         <!-- guava -->
         <dependency>

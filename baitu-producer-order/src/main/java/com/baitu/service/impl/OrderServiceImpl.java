@@ -18,7 +18,7 @@ public class OrderServiceImpl implements OrderService{
 		System.out.println("order-->"+orderCode);
 		
 		BtOrder order = new BtOrder();
-		order.setOrderCode(UUID.randomUUID().toString().replaceAll("-", ""));
+		order.setOrderCode(UUID.randomUUID().toString().replaceAll("-", "")+"-9001");
 		order.setOrderTime(new Date());
 		return order;
 	}

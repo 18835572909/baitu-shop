@@ -1,0 +1,22 @@
+server:
+   port: 8002
+  
+  
+spring:
+   application:
+      name: baitu-ribbon-service
+   jackson:
+      time-zone: GMT+8
+      serialization:
+         fail-on-empty-beans: false
+      date-format: yyyy-MM-dd HH:mm:ss
+
+info:
+   project:
+      name: baitu-ribbon-service
+      version: 1.0.0 
+
+eureka:
+   client:
+      serviceURL:
+         defaultZone: http://localhost1:8761/eureka/,http://localhost2:8861/eureka/

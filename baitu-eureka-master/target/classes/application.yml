@@ -1,23 +1,16 @@
 server:
-   port: 10002
-   
+  port: 8761
 spring:
-   application:
-      name: baitu-eureka-peer2
-
-info:
-   project:
-      name: project-eureka-peer2
-      version: 1.0.0
-
+  application:
+    name: eurekaserver
+  
 eureka:
   instance:
-    hostname: 127.0.0.2
-    preferIpAddress: true
+    hostname: localhost1
   client:
+    register-with-eureka: true
+    fetch-registry: true
     serviceUrl:
-      defaultZone: http://127.0.0.1:10001/eureka/
-    register-with-eureka: false
-    fetch-registry: false
+      defaultZone: http://localhost2:8861/eureka/
   server:
-    enable-self-preservation: false
+    enableSelfPreservation: false

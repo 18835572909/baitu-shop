@@ -1,0 +1,25 @@
+package com.baitu.entity;
+
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+/**
+ * @author renhuibo  2019-11-01 01:26:16
+ * @Description
+ */
+@Getter
+@Setter
+@ToString
+@JsonInclude(Include.NON_NULL)
+public class BtOrder {
+	private String orderCode;
+	private Date orderTime;
+	private Integer orderStatus=0;
+	private Double orderMoney=0d;
+}

@@ -1,0 +1,41 @@
+server:
+   port: 8001
+   
+spring:
+   application:
+      name: baitu-ribbon-service
+   jackson:
+      time-zone: GMT+8
+      serialization:
+         fail-on-empty-beans: false
+      date-format: yyyy-MM-dd HH:mm:ss
+   #开启重试机制
+   cloud:
+      loadbalancer:
+         retry:
+            enable: true 
+info:
+   project:
+      name: baitu-ribbon-service
+      version:  1.0.0
+      
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://localhost1:8761/eureka/,http://localhost2:8861/eureka/
+   #刷新服务提供者清单时间间隔
+   registry-fetch-interval-seconds: 30
+
+#订单服务：重试机制配置
+baitu-order-service:
+   ribbon:
+      #请求连接的超时
+      ConnectTimeout: 300   
+      #请求处理的超时
+      ReadTimeout: 1000
+      #所操作请求都重试
+      OkToRetryOnAllOperations: true
+      #当前实例重试次数
+      MaxAutoRetires: 2
+      #切换实例重试次数
+      MaxAutoRetriesNextServer: 2 
